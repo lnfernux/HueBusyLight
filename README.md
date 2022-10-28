@@ -16,11 +16,15 @@ Show when you're busy (or not) using Hue Lights.
 $bridgeIp = Find-HueBridge
 ```
 
+**NOTE**: If you have multiple bridges obviously chose one of them here.
+
 3. Run the following command to connect to the Hue Bridge
 
 ```powershell
 $connectionInfo = Connect-HueBridge -bridgeIp $bridgeIp
 ```
+
+**NOTE**: This will prompt you to go click on your Hue Bridge button - go do so, then press enter when you get back and it should work.
 
 ## Usage
 
