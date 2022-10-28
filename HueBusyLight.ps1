@@ -196,18 +196,16 @@ function Activate-HueBusyLight {
     PARAM(
         $bridgeIp,
         $appkey,
-        $busyMinutes,
-        $lightId
+        $busyMinutes
     )
     try {
-        Enable-HueLight -bridgeIp $bridgeIp -appkey $appkey -lightId $lightId
-        Change-HueBrightness -bridgeIp $bridgeIp -appkey $appkey -lightId $lightId -brightnesspercent 100
-        Change-HueLightColor -bridgeIp $bridgeIp -appkey $appkey -lightId $lightId -x 0.6435 -y 0.3045
-        Start-Sleep -Minutes $busyMinutes
+        Enable-HueLight -bridgeIp $bridgeIp -appkey $appkey -lightId "2256e1cc-ea9f-4d5f-8558-9b2c11d6d529"
+        Change-HueBrightness -bridgeIp $bridgeIp -appkey $appkey -lightId "2256e1cc-ea9f-4d5f-8558-9b2c11d6d529" -brightnesspercent 100
+        Change-HueLightColor -bridgeIp $bridgeIp -appkey $appkey -lightId "2256e1cc-ea9f-4d5f-8558-9b2c11d6d529" -x 0.6435 -y 0.3045
+        Start-Sleep ($busyMinutes*60)
         Activate-HueNotBusyLight -bridgeIp $bridgeIp -appkey $appkey
     }
     catch {
         Write-Host "Error: $_"
     }
 }
-
