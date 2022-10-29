@@ -67,7 +67,7 @@ Description                    Hue color lamp 2
 ### Activate BusyLight
 
 ```powershell
-Activate-HueBusyLight -bridgeIp $bridgeIp -appkey $appkey -busyMinutes 1
+Activate-HueBusyLight -bridgeIp $bridgeIp -appkey $appkey -busyMinutes 1 -lightId <RID>
 ```
 
 After X minutes it will turn green, using the `Activate-HueNotBusyLight`-function.
